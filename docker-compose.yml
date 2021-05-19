@@ -1,0 +1,20 @@
+version: '3.3'
+services: 
+    demo-thread-db:
+        build:
+            context: .
+            dockerfile: DB.Dockerfile
+        image: demo-thread-db
+
+    demo-thread:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: demo-thread
+        ports:
+            - "5000:5000"
+        volumes: 
+            - ./:/opt/Project
+        links:
+            - demo-thread-db:demo-thread-db
+

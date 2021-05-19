@@ -1,0 +1,3 @@
+CREATE USER 'demo'@'%' IDENTIFIED BY 'demo';
+GRANT ALL PRIVILEGES ON sfa.* TO 'demo'@'%';
+FLUSH PRIVILEGES;
